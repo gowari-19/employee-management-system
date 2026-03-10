@@ -25,5 +25,29 @@ The system helps manage employee records, attendance, and leave management effic
 - Frontend – User interface of the system
 - Database – MongoDB for storing employee data
 
+## Installation and Setup
+
+Follow these steps to run the project locally:
+
+1. Clone the repository
+git clone https://github.com/gowari-19/employee-management-system.git
+
+2. Navigate to the backend folder
+cd employee-management-system
+cd backend
+
+3. Install dependencies
+npm install
+
+4. Make sure MongoDB is running on your system.
+
+5. Start the server
+node server.js
+
+6. Open your browser and visit
+http://localhost:5000
+
 ## Author
 Purva Rajendra Gowari
+
+

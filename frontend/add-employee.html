@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Employee</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="auth.js"></script>
+
+</head>
+
+<body class="bg-light">
+<script>
+  checkAuth("admin");
+</script>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-dark px-4">
+  <a href="dashboard.html" class="navbar-brand">← Dashboard</a>
+
+</nav>
+
+<div class="container mt-4">
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white fw-bold">
+      Add New Employee
+    </div>
+
+    <div class="card-body">
+
+      <form id="employeeForm">
+
+        <!-- NAME & EMAIL -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Employee Name</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+        </div>
+
+        <!-- DOB & AGE -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Date of Birth</label>
+            <input type="date" id="dob" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Age</label>
+            <input type="text" id="age" class="form-control" readonly>
+          </div>
+        </div>
+
+        <!-- DEPARTMENT & DESIGNATION -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Department</label>
+            <select id="department" class="form-select" required>
+              <option value="">Select Department</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Designation</label>
+            <select id="designation" class="form-select" required>
+              <option value="">Select Designation</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- SALARY & STATUS -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Salary</label>
+            <input type="number" id="salary" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Status</label>
+            <select id="status" class="form-select">
+              <option value="Active">Active</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- JOINING DATE (CENTERED & CLEAN) -->
+        <div class="row mb-4 justify-content-center">
+          <div class="col-md-6">
+            <label class="form-label">Joining Date</label>
+            <input type="date" id="joiningDate" class="form-control" required>
+          </div>
+        </div>
+
+        <button class="btn btn-success w-100 py-2">
+          Add Employee
+        </button>
+
+      </form>
+
+      <div id="message" class="mt-3"></div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="add-employee.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+1️⃣ SEQUENCE
+🔹 PL/SQL Meaning:
+
+Auto-generate unique IDs.
+
+🔹 In YOUR Project:
+_id: ObjectId("...")
+
+
+MongoDB automatically generates _id.
+
+🔹 HOW YOU WRITE IN DOCUMENT:
+
+MongoDB ObjectId works like a sequence and auto-generates unique Employee IDs.
+
+📌 Marks-worthy point
+2️⃣ FUNCTION
+🔹 PL/SQL Meaning:
+
+Return a calculated value.
+
+🔹 In YOUR Project:
+
+We will create JS functions in:
+
+utils/employeeFunctions.js
+
+Example:
+exports.calculateAge = (dob) => {
+  const diff = Date.now() - new Date(dob).getTime();
+  return Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+};
+
+exports.calculateExperience = (joiningDate) => {
+  const diff = Date.now() - new Date(joiningDate).getTime();
+  return Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+};
+
+
+✔ Age
+✔ Experience
+
+🔹 Used when?
+
+When employee is fetched
+
+When showing frontend table
+
+📌 THIS COUNTS AS FUNCTION
+
+3️⃣ PROCEDURE (IN parameter)
+🔹 PL/SQL Meaning:
+
+Performs action, no return value.
+
+🔹 In YOUR Project:
+
+Controller functions like:
+
+createEmployee(req, res)
+
+
+They:
+
+Take input
+
+Insert into DB
+
+Do not return value, only status
+
+📌 Controller = Procedure
+
+4️⃣ CURSOR
+🔹 PL/SQL Meaning:
+
+Fetch records one-by-one or as loop.
+
+🔹 In YOUR Project:
+Employee.find()
+
+
+OR in frontend:
+
+employees.forEach(emp => { ... });
+
+
+This is exactly cursor looping.
+
+📌 Write this clearly in documentation:
+
+Fetching employee records and looping through them using JavaScript acts as cursor functionality.
+
+5️⃣ EXCEPTION HANDLING
+🔹 PL/SQL Meaning:
+
+Handle runtime errors.
+
+🔹 In YOUR Project:
+try {
+  ...
+} catch (error) {
+  res.status(400).json({ message: error.message });
+}
+
+
+Examples:
+
+Duplicate email
+
+Invalid departmentId
+
+Missing fields
+
+📌 Direct mapping
+
+6️⃣ TRIGGER
+🔹 PL/SQL Meaning:
+
+Auto action on INSERT / DELETE.
+
+🔹 In YOUR Project:
+
+We simulate trigger using Mongoose middleware.
+
+Example:
+employeeSchema.pre("save", function(next) {
+  console.log("Employee record is being created");
+  next();
+});
+
+
+OR:
+
+Auto createdAt
+
+Auto updatedAt
+
+📌 THIS IS TRIGGER LOGIC
+
+7️⃣ PACKAGE
+🔹 PL/SQL Meaning:
+
+Group procedures & functions.
+
+🔹 In YOUR Project:
+utils/employeeFunctions.js
+controllers/employeeController.js
+
+
+Grouped logic = Package
+
+📌 Write:
+
+JavaScript modules act as packages grouping related functions.

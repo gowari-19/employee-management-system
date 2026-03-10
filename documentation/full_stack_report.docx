@@ -1,0 +1,221 @@
+📘 FULL STACK DEVELOPMENT – CA II
+Employee Management System (Backend using Express.js & MongoDB)
+
+1️⃣ INTRODUCTION
+The Employee Management System is a backend-based application developed using Node.js, Express.js, and MongoDB.
+The project follows the RESTful API architecture and provides endpoints to perform CRUD operations (Create, Read, Update, Delete) on multiple resources such as Employees, Departments, Designations, Attendance, and Leaves.
+The APIs are tested using Postman, and the data is stored and verified using MongoDB Compass.
+This system helps in managing employee-related data efficiently and demonstrates real-world backend development concepts.
+
+2️⃣ OBJECTIVES OF THE PROJECT
+The main objectives of this project are:
+To design and implement RESTful APIs using Express.js
+To perform CRUD operations on multiple resources
+To store and manage data using MongoDB
+To establish relationships between collections using ObjectId
+To test APIs using Postman
+To return appropriate HTTP status codes for each operation
+
+3️⃣ SYSTEM REQUIREMENTS
+Hardware Requirements
+Laptop or Desktop Computer
+Minimum 4 GB RAM
+Software Requirements
+Node.js
+Express.js
+MongoDB Server
+MongoDB Compass
+Postman
+Visual Studio Code
+Windows Operating System
+
+4️⃣ TECHNOLOGY STACK USED
+Technology
+Description
+Node.js
+JavaScript runtime environment
+Express.js
+Backend web framework
+MongoDB
+NoSQL database
+Mongoose
+ODM for MongoDB
+Postman
+API testing tool
+MongoDB Compass
+Database GUI tool
+
+
+5️⃣ DATABASE DESIGN
+The database used for this project is EmployeeDB.
+The following collections are created to manage different resources:
+Employees
+Departments
+Designations
+Attendance
+Leaves
+Each collection stores structured data, and relationships are maintained using ObjectId references.
+
+6️⃣ COLLECTION DETAILS
+Employees Collection
+name
+email
+dob
+designation
+joiningDate
+salary
+status
+departmentId (Reference)
+createdAt, updatedAt
+Purpose: Stores complete employee details.
+
+Departments Collection
+name
+code
+createdAt, updatedAt
+Purpose: Stores department information.
+
+Designations Collection
+title
+level
+departmentId
+Purpose: Stores designation details linked with departments.
+
+Attendance Collection
+employeeId
+loginTime
+logoutTime
+date
+Purpose: Stores login and logout details of employees.
+
+Leaves Collection
+employeeId
+leaveType
+startDate
+endDate
+status
+Purpose: Stores employee leave records.
+
+7️⃣ API ENDPOINTS
+Employee APIs
+HTTP Method
+Endpoint
+Description
+POST
+/api/employees
+Add new employee
+GET
+/api/employees
+Get all employees
+GET
+/api/employees/:id
+Get employee by ID
+PUT
+/api/employees/:id
+Update employee
+DELETE
+/api/employees/:id
+Delete employee
+
+
+Department APIs
+HTTP Method
+Endpoint
+Description
+POST
+/api/departments
+Add department
+GET
+/api/departments
+Get all departments
+PUT
+/api/departments/:id
+Update department
+DELETE
+/api/departments/:id
+Delete department
+
+
+Attendance APIs
+HTTP Method
+Endpoint
+Description
+POST
+/api/attendance/login
+Employee login
+PUT
+/api/attendance/logout/:id
+Employee logout
+GET
+/api/attendance
+View attendance
+
+
+Leave APIs
+HTTP Method
+Endpoint
+Description
+POST
+/api/leaves
+Apply leave
+GET
+/api/leaves
+View leaves
+PUT
+/api/leaves/:id
+Update leave status
+
+
+8️⃣ HTTP STATUS CODES USED
+201 Created – Resource created successfully
+200 OK – Request successful
+400 Bad Request – Validation error
+404 Not Found – Resource not found
+500 Internal Server Error – Server error
+
+9️⃣ TESTING USING POSTMAN
+All APIs were tested using Postman.
+CRUD operations were performed successfully, and JSON responses were received with appropriate status codes.
+📸 Screenshots to ADD (VERY IMPORTANT)
+Add these exact screenshots in this order 👇
+Screenshot 1 – Create Department
+POST /api/departments
+Body: name, code
+👉 Caption: Creating a new department using Postman
+
+Screenshot 2 – Create Employee
+POST /api/employees
+Include departmentId
+👉 Caption: Adding employee data through REST API
+
+Screenshot 3 – Get All Employees
+GET /api/employees
+👉 Caption: Fetching all employees using GET request
+
+Screenshot 4 – Update Employee
+PUT /api/employees/:id
+👉 Caption: Updating employee details
+
+Screenshot 5 – Attendance Login
+POST /api/attendance/login
+👉 Caption: Employee login time recorded
+
+Screenshot 6 – Attendance Logout
+PUT /api/attendance/logout/:id
+👉 Caption: Employee logout time updated
+
+Screenshot 7 – MongoDB Compass (Employees Collection)
+👉 Caption: Employee data stored in MongoDB Compass
+
+Screenshot 8 – MongoDB Compass (All Collections View)
+👉 Caption: Multiple collections created in EmployeeDB
+
+🔟 DATABASE VERIFICATION
+MongoDB Compass was used to verify the database operations.
+All CRUD actions performed via Postman were reflected in the MongoDB collections.
+
+1️⃣1️⃣ CONCLUSION
+The Employee Management System successfully implements RESTful APIs using Express.js and MongoDB.
+It supports CRUD operations, multiple collections, relationship handling, and proper API testing.
+The project fulfills all requirements of the Full Stack Development subject.
+
